@@ -1,7 +1,7 @@
 const express = require('express');
-
-
+const authRoutes = require('./routes/authRoutes');
 require('./services/passport')
+
 const app = express();
 
 app.get('/', (req, res) => {
@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 
-require('./routes/authRoutes')(app);
+authRoutes(app);
 
 const PORT = 8080;
 app.listen(PORT);
